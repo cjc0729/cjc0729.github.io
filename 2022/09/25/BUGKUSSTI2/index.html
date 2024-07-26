@@ -1,0 +1,1023 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="BUGKU之SSTI2 题解, 黄麓204">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>BUGKU之SSTI2 题解 | 黄麓204</title>
+    <link rel="icon" type="image/png" href="/cjc0729/hl204.github.io.git/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/css/my.css">
+
+    <script src="/cjc0729/hl204.github.io.git/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(http://r0wf6lwny.hn-bkt.clouddn.com/0a5b1d10e93c6c615c4bce0b218a657.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    	
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+                    
+                    <img src="/cjc0729/hl204.github.io.git/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">黄麓204</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/cjc0729/hl204.github.io.git/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">黄麓204</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/cjc0729/hl204.github.io.git/medias/featureimages/24.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">BUGKU之SSTI2 题解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/cjc0729/hl204.github.io.git/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+	#toc-content {
+    height: calc(100vh - 250px);
+    overflow: scroll;
+	}
+	
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/%E6%AF%94%E8%B5%9B/">
+                                <span class="chip bg-color">比赛</span>
+                            </a>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/CTF/">
+                                <span class="chip bg-color">CTF</span>
+                            </a>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/">
+                                <span class="chip bg-color">网络攻防</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/categories/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" class="post-category">
+                                网络攻防
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-05-30
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="371f3331bc3a160ea4688574e72e91de8f1431f075c7b15ca827803182a4dcc5">6b770851ed49be0ea48eb956b2778b028ad8fdd3b0d95a3fee5f51299a81f97546bcfe7c298655235e340abf5f3d1f317e1e466da633ccb72985652a2aa4b5f1292a6eda68307ef5862c57e31d05afb1199980c42df81903339897db6f63f5d34c577c58eddab54c9d09f0c050b1637da5486bb9da1057122430cc8c350df5b6f9fac92ddc7903f070ba8b39b3a5d3aec6e052031f16bac60f89d6fb3fc261cf7fbfe0c620dea19f7ce7d92a61019d1c00d5b9e9872f2b0036ca49a376cb2df35a7ff134838d759957179aff2fb4972c5f1ef50fa83f811c0057b6bc95da91e15f470ffa432d2ac7a67ab222b6572b689b4a0354b62ab87fc645e7f899c9ab0f083ee96ca70122e77423e784c2c9945007dbb3b86a6d01c24df3284ae3f1bee46279d93e5304448eade807bbcc4db37e603dc1e4f3efb02d5f9eb24f864473f8b150afc206820fd7ddacf2e0ba844f5e2b66f668d3574b045c0b0f63d1dd762f303dfd20f635cf6d5c4a64c4bc6cd2e386d36b938c711449aa5c7cafcdedcccbd1e9f1c3724c1f28f7b6689076685ac19ce36201adc4792fafcdec2a05fdb7bf4739e044db9c6e99ed1612d6d44bbc2bdc784db9a03da20cceea06f36a54acd7ba4bf20dc9b3d6077ddbd22e77c5bba4db9f1e9375e7ad056a4ea6c3a5c327af291423d454e4e6ab37c65f9a8d589846b6ca637455c020dbbedd0be4de6c2caf564a537804c98d96c2f5e09e82bb2e8d309f0023e4fa8ccf7c20cbff4dd7795ee73d437e7a33eb3e4bdca4de32ba11f1524860339682ace986569b919537a4faa3fdb542494887f088919880673b86cd9bf359e3cad99feca98692b6f2ec5bb0a782946a41b28749b963ec301204e121b6370ef49302a089178a0589b956ba96bfe90f118d30c897bd4c3ec579dd878ee74e2af9ed55d017d085e91033d16cd7c89f223bbc3c8018eb67f76cc9bcde5e4770f067368578fe4b4f3e66dbac75162a7dd7e2db545a7ad53eb2d1fbb0b2148f7b71123b1ff52f96073add1ec77aeb646a06ec0fca7118b93e41a48b281ef5f0b6c1bd24c95aadd8e9c6b7c6b285e230416ec5a957f14b14babbb4bde3b1652a4f5395bd33ea2e9e45ad24989211e02d734fcb3c00ad1b995252fd7476998de56a8da858d7cc17c5b901029977c92a4723fb9d805e4427d18434993d106308d9a70de0e1de38e4457881eb5254ec1180c33b22a490a50dd6919d88e6c6ad464a52548433c81a207957d4077d59aedd9b4627930162ef4a167e6e90f9766ec9c321e5529c6be610d7215d647e9be635136cf93f57ff610509584fa54eecdda5eba2ece342cec703bd124bef53edca285e953ff5a37cb69c550296eebddb406c64e232ccc12769e62b839123ddd6fba08b656738895301663f98949660d0e744dde1e9b3d859c171650f79f4d4217fded07d9be9fac9920259501f60c53a3adc9d7a240672a2097aef863dfd797c93d854e600dc03ef97a7c6282c4508d9244484a2cd2f150e4aae1e3be435e680a2601cec5d9f6d2fa00cf4b6437fa25ebf6c4df1de04dc8d2935cd320be5d3d44a5f917d0c011b80989e90ce4c6125320ae95afbb5c093aa02c78d2ca1d792ece65fb3ba1e5e29253f909f0264af22d93c248ad48f9c759d9834b97c966ae31bd683c85c1e7e8ee04e2993772bd8fbde7a5c8101d5138a06b1a49ab297fb7b2642d90d1c494a64ab86de30c0bd00d4ae4593875b8b7993c9aca6afdfb5e1390398dadec63377951ee9194208688459e52ebabcbafb12865bb77b58aee0ad62c1db75dd65d3ff78a728b6fec662cad943cc29cf658f2ba34a0e9e7407aac1cc7be06892b6200e947dd8826978aaab2eca6640044c938f56164d608471519c3eb66920726b6f51ad8cccd0474815d52c527bf2afd762443e90009f81a92ea8324a7f3ef6289e8997c2ac3e6cf995f56453d3cfd9e37c2e2a3404044aaf91b72f3d0cbae38782472f621eaf47dc21052258f8d2f6baa3c09f2f4a445ae1dee6bb8e7ca9a2d6f28b6409ac611c99d6fa76a15c39412a504f358712d2da6f7c86e1953295be7f5ec04ce09cc8edba97418ddfbfb24003417f1ea6ff8af7c49e5438f2e731a9a3263af1507abf25740ed7ed4522244bb286782503138b83461038faa14184ed975868911f430e4c381e12a7ef597142dc27f10bc86e6204b97fcbf62d5b6a97ed963a7239fb8d80898bb987fdd1c5504208dcee8b02f14d5c16c915cff8bff96692fb07c5d38e51093501c7dfeb27aba1e965e9e95198a5f53ce4a9cea86da5738838aa161ff76dbbc31c9d106a5dadfab2c448655e5deda5616a3dad1d1d64d8e77c9e30b5a60ed00c624fba4454c8965d0f65e14c0481c3977df2462b167a8e4fef797530c16e13751761a29615ffc51640cb3cb56ed2734ca19b6d498f36f39ff56cd7e982a24f1ff5c992371ae7bee57eaa27b7cabdf28991e73781fd35cdfb8c9c94e92f98b06918cf4e88aef1011a29b835f512335d927cd7863d85497b27d5bf985f7bb5f4ba261cb311fffbb0464b5fd7715ee6a8fe9bc94d35dd1cd4aaef40ce3fc5ed9d4bf019dcae267d47ef839f365d22c96714dad6ed984ed85cc6242542dffeeb98c54777d749ea00067c86eabb1ab44675537e986aca2e209029256efab58b7bb23c2fd1f2e88ff6b55c6a4875720ef05813a888332ef9d24c47c217459a3c3f37b87d5b3216f3d854f92792ec19acdda4e18f195406f045fcd89b0e562f74aa87c641883bacac2fcf409fff03e75849751af6453cfad3a5eb85120cfbcc855b2910b87ff98660e2e6ba726bdf00de20d1962255e0f3ec272bf7e71346c46a41b4caf12ea71db4e409a25b2ff391ce1d175ee5baf63dfebc91682004453ed365e8fda5765acb0bef0cc38e43b02e8fa9e8996d9591146407a9260281ce35e7563476db97b7153182911fbd1b2eb943a155380562db4ddcb974fa1f91d1afb6a076598c7fe918040e719a689c3fc8cdcb4b3a4bbd234ac5dfb1e08cbe5f69498b09a6a4a00dc7f9d32885947842a92c93d11425a3a2b79a2ce93a09e15eff3d95a87df1a990ebf34654a5fd529246d9b5c59f85d38be7f5f096ffafc93229e3284061d9257dce81d2a2bf54781c78a35af6213318dff596bb10d1e044d49f4b18825c41ee1e7d666b396323727fa202181db334c7df9fb822ff703f7011028c45911c15f9d3f199d5df765715c1aeb9531e723953292cc69297730db54cd73dd85c752856f1f704f65b6974f73aaf2ef5f94aa074dc6b4f874bb83b6bec53f0b2becc5f993d23d67a68ea48091efb5a0c8c129faf85086ad5cd997939120aa3a7c0c11f4a437ecbe75e873c2f214cab2e2b2dc2f647d00a617111c4860b716991b7a05643a1ea01a0abd9e8c04ae6b69d13fc05c698561e5c00b312103b8f8ebebcd85df11aa8bd42a882dc6441a3eccd93c576db3a9e0d87cd1879b9dc2c8acd5a1a46e072e9101345ed15abfb28165bc1e7367b3e76a20164105879f351cca45300d4f4516cee1dada5cbf7231390c07f40e17a3bbca6517e51c40fba07e2daac73c76b3b0e7b50ec23a44e406707aec936e73c2cb0a7dfd868cd9247c574377cc5671664346ef8b82c381bdad1c16e88efb14796462abd88ea3ae159c3f4ffe0798274ca1e49caaf24bb682dd0c04a749a44e034852c436524a67dc38749a777411f742ad9dc85887099f21fcec4c22d1ec9b6e7acb59872620cfbfcbacc51fe1542eeb52e1d10f7679e8d6eca2f3159fc533a95506ad4d63f837e6ab12f23292aad8e96ba3410ef68a2b018c10a3978b303db4ea15d076002d58958a05791b88e6ad2e9f68503fd02d206b860b1425dcfcb2e165f60e1bec958019570ba29b7999e62e4062c2935c8dd87c238a59d8f0f63af9295eab56c331f68756a3f70bacd5db6f170b3efd911ca0f095ba55573126316897477</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/cjc0729/hl204.github.io.git/lib/hbe.js"></script><link href="/cjc0729/hl204.github.io.git/css/hbe.style.css" rel="stylesheet" type="text/css">
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/cjc0729/hl204.github.io.git/about" rel="external nofollow noreferrer">陈宸</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2022/09/25/BUGKUSSTI2/">https://github.com/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2022/09/25/BUGKUSSTI2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/cjc0729/hl204.github.io.git/about" target="_blank">陈宸</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/%E6%AF%94%E8%B5%9B/">
+                                    <span class="chip bg-color">比赛</span>
+                                </a>
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/CTF/">
+                                    <span class="chip bg-color">CTF</span>
+                                </a>
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/">
+                                    <span class="chip bg-color">网络攻防</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/cjc0729/hl204.github.io.git/2022/10/15/tryhackme/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/cjc0729/hl204.github.io.git/medias/featureimages/25.jpg" class="responsive-img" alt="tryhackme学习过程">
+                        
+                        <span class="card-title">tryhackme学习过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            十分好用的网络攻防基础学习网站
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/cjc0729/hl204.github.io.git/categories/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" class="post-category">
+                                    网络攻防
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/cjc0729/hl204.github.io.git/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/cjc0729/hl204.github.io.git/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                    <a href="/cjc0729/hl204.github.io.git/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/">
+                        <span class="chip bg-color">网络攻防</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/cjc0729/hl204.github.io.git/2021/10/05/shetuanbumen/">
+                    <div class="card-image">
+                        
+                        <img src="/cjc0729/hl204.github.io.git/medias/featureimages/27.jpg" class="responsive-img" alt="社团部门">
+                        
+                        <span class="card-title">社团部门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            社团部门简介
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/cjc0729/hl204.github.io.git/categories/%E7%A4%BE%E5%9B%A2/" class="post-category">
+                                    社团
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/cjc0729/hl204.github.io.git/tags/%E7%A4%BE%E5%9B%A2/">
+                        <span class="chip bg-color">社团</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/cjc0729/hl204.github.io.git/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2024</span>
+            
+            <span id="year">2021</span>
+            <a href="/cjc0729/hl204.github.io.git/about" target="_blank">黄麓204</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/cjc0729/hl204.github.io.git/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/cjc0729/hl204.github.io.git/libs/materialize/materialize.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/aos/aos.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/cjc0729/hl204.github.io.git/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/cjc0729/hl204.github.io.git/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/cjc0729/hl204.github.io.git/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/cjc0729/hl204.github.io.git/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/cjc0729/hl204.github.io.git/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+	<script type="text/javascript">
+    var a_idx = 0;
+jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+        var a = new Array("黄","麓","204");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FF0000"
+        });
+        $("body").append($i);
+        $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            3000,
+            function () {
+                $i.remove();
+            });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+
+    </script>
+
+<script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "记得回来黄麓204~", clearTimeout(st)) : (document.title =
+            "你已进入黄麓204，前方高能！", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+</script>     	
+</body>
+
+</html>

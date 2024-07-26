@@ -1,0 +1,1420 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="2024年FIC初赛题解, 黄麓204">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>2024年FIC初赛题解 | 黄麓204</title>
+    <link rel="icon" type="image/png" href="/cjc0729/hl204.github.io.git/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/css/my.css">
+
+    <script src="/cjc0729/hl204.github.io.git/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(http://r0wf6lwny.hn-bkt.clouddn.com/0a5b1d10e93c6c615c4bce0b218a657.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    	
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+                    
+                    <img src="/cjc0729/hl204.github.io.git/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">黄麓204</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/cjc0729/hl204.github.io.git/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/cjc0729/hl204.github.io.git/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">黄麓204</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/cjc0729/hl204.github.io.git/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/cjc0729/hl204.github.io.git/medias/featureimages/34.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">2024年FIC初赛题解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/cjc0729/hl204.github.io.git/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+	#toc-content {
+    height: calc(100vh - 250px);
+    overflow: scroll;
+	}
+	
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/">
+                                <span class="chip bg-color">电子取证</span>
+                            </a>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/%E9%A2%98%E8%A7%A3/">
+                                <span class="chip bg-color">题解</span>
+                            </a>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/tags/%E6%AF%94%E8%B5%9B/">
+                                <span class="chip bg-color">比赛</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/cjc0729/hl204.github.io.git/categories/%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/" class="post-category">
+                                电子取证
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-05-30
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="2024年FIC线上赛wp"><a href="#2024年FIC线上赛wp" class="headerlink" title="2024年FIC线上赛wp"></a>2024年FIC线上赛wp</h1><p>容器密码：2024Fic@杭州Powered<del>by</del>HL!</p>
+<h4 id="手机部分"><a href="#手机部分" class="headerlink" title="手机部分"></a>手机部分</h4><h4 id="1、嫌疑人李某的手机型号是？"><a href="#1、嫌疑人李某的手机型号是？" class="headerlink" title="1、嫌疑人李某的手机型号是？"></a><strong>1、嫌疑人李某的手机型号是？</strong></h4><p>A. Xiaomi MI 2s</p>
+<p>B. Xiaomi MI 4</p>
+<p>C. Xiaomi MI 6</p>
+<p>D. Xiaomi MI 8</p>
+<pre><code>1.B
+</code></pre>
+<p>在useragent.txt中可以找到是MI 4LTE</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525083024769.png" alt="image-20240525083024769"></p>
+<h4 id="2、嫌疑人李某是否可能有平板电脑设备，如有该设备型号是？"><a href="#2、嫌疑人李某是否可能有平板电脑设备，如有该设备型号是？" class="headerlink" title="2、嫌疑人李某是否可能有平板电脑设备，如有该设备型号是？"></a><strong>2、嫌疑人李某是否可能有平板电脑设备，如有该设备型号是？</strong></h4><p>A. iPad Pro 11</p>
+<p>B. Vivo Pad 2</p>
+<p>C. MatePad Pro</p>
+<p>D. Xiaomi Pad 6s</p>
+<pre><code>2.D
+</code></pre>
+<p>在Wi-Fi连接记录中找到</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525084031186.png" alt="image-20240525084031186"></p>
+<h4 id="3、嫌疑人李某手机开启热点设置的密码是-【答题格式：abc123】"><a href="#3、嫌疑人李某手机开启热点设置的密码是-【答题格式：abc123】" class="headerlink" title="3、嫌疑人李某手机开启热点设置的密码是?【答题格式：abc123】"></a><strong>3、嫌疑人李某手机开启热点设置的密码是?【答题格式：abc123】</strong></h4><pre><code>5aada11bc1b5
+</code></pre>
+<p>在移动热点中可以找到</p>
+<p>![屏幕截图 2024-05-25 084716](/屏幕截图 2024-05-25 084716.png)</p>
+<h4 id="4、嫌疑人李某的微信内部ID是？【答题格式：wxid-abc123】"><a href="#4、嫌疑人李某的微信内部ID是？【答题格式：wxid-abc123】" class="headerlink" title="4、嫌疑人李某的微信内部ID是？【答题格式：wxid_abc123】"></a><strong>4、嫌疑人李某的微信内部ID是？【答题格式：wxid_abc123】</strong></h4><pre><code>wxid_wnigmud8aj6j12
+</code></pre>
+<p>直接查看手机上微信的内部ID即可</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525085331975.png" alt="image-20240525085331975"></p>
+<h4 id="5-嫌疑人李某发送给技术人员的网站源码下载地址是什么【答题格式：http-www-baidu-com-adc】"><a href="#5-嫌疑人李某发送给技术人员的网站源码下载地址是什么【答题格式：http-www-baidu-com-adc】" class="headerlink" title="5. 嫌疑人李某发送给技术人员的网站源码下载地址是什么【答题格式：http://www.baidu.com/adc】"></a><strong>5. 嫌疑人李某发送给技术人员的网站源码下载地址是什么【答题格式：<a target="_blank" rel="noopener" href="http://www.baidu.com/adc%E3%80%91">http://www.baidu.com/adc】</a></strong></h4><pre><code>http://www.honglian7001.com/down
+</code></pre>
+<p>在李某和赵老五的聊天记录中找到源码查看途径</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525085813657.png" alt="image-20240525085813657"></p>
+<p>将二维码导出后，使用QR Research扫码可以得到密文，并知道加密方式为新佛曰</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525085932894.png" alt="image-20240525085932894"></p>
+<p>在解密网站上解密即可</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525090547624.png" alt="image-20240525090547624"></p>
+<h4 id="6、受害者微信用户ID是？【答题格式：abc123】"><a href="#6、受害者微信用户ID是？【答题格式：abc123】" class="headerlink" title="6、受害者微信用户ID是？【答题格式：abc123】"></a><strong>6、受害者微信用户ID是？【答题格式：abc123】</strong></h4><pre><code>limoon890
+</code></pre>
+<p>根据微信聊天记录分析，受害人微信名称为limoon，从而知道ID</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525090914431.png" alt="image-20240525090914431"></p>
+<h4 id="7、嫌疑人李某第一次连接WIFI的时间是？"><a href="#7、嫌疑人李某第一次连接WIFI的时间是？" class="headerlink" title="7、嫌疑人李某第一次连接WIFI的时间是？"></a><strong>7、嫌疑人李某第一次连接WIFI的时间是？</strong></h4><p>A. 03-14 15:55:57</p>
+<p>B. 03-14 16:55:57</p>
+<p>C. 03-14 17:55:57</p>
+<p>D. 03-14 18:55:57</p>
+<pre><code>7.B
+</code></pre>
+<p>找到WifiConfigStore.xml，可以看到CreationTime</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525091348363.png" alt="image-20240525091348363"></p>
+<h4 id="8、分析嫌疑人李某的社交习惯，哪一个时间段消息收发最活跃？"><a href="#8、分析嫌疑人李某的社交习惯，哪一个时间段消息收发最活跃？" class="headerlink" title="8、分析嫌疑人李某的社交习惯，哪一个时间段消息收发最活跃？"></a><strong>8、分析嫌疑人李某的社交习惯，哪一个时间段消息收发最活跃？</strong></h4><p>A. 12:00-14:00</p>
+<p>B. 14:00-16:00</p>
+<p>C. 16:00-18:00</p>
+<p>D. 18:00-20:00</p>
+<pre><code>8.C
+</code></pre>
+<p>分析微信聊天记录时间即可</p>
+<h4 id="9、请分析嫌疑人手机，该案件团伙中，还有一名重要参与者警方未抓获，该嫌疑人所使用的微信账号ID为？【答题格式：wxid-abc123】"><a href="#9、请分析嫌疑人手机，该案件团伙中，还有一名重要参与者警方未抓获，该嫌疑人所使用的微信账号ID为？【答题格式：wxid-abc123】" class="headerlink" title="9、请分析嫌疑人手机，该案件团伙中，还有一名重要参与者警方未抓获，该嫌疑人所使用的微信账号ID为？【答题格式：wxid_abc123】"></a><strong>9、请分析嫌疑人手机，该案件团伙中，还有一名重要参与者警方未抓获，该嫌疑人所使用的微信账号ID为？【答题格式：wxid_abc123】</strong></h4><pre><code>wxid_06f01lnpavn722
+</code></pre>
+<p>分析聊天记录，发现还有一个名为“愚蠢的土拨鼠”的用户</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525091801014.png" alt="image-20240525091801014"></p>
+<p>在通讯录中找到账号ID</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092156710.png" alt="image-20240525092156710"></p>
+<h4 id="10-请分析嫌疑人手机，嫌疑人老板组织人员参与赌博活动，所使用的国内访问入口地址为？【答题格式：192-168-1-1-1000-abc】"><a href="#10-请分析嫌疑人手机，嫌疑人老板组织人员参与赌博活动，所使用的国内访问入口地址为？【答题格式：192-168-1-1-1000-abc】" class="headerlink" title="10. 请分析嫌疑人手机，嫌疑人老板组织人员参与赌博活动，所使用的国内访问入口地址为？【答题格式：192.168.1.1:1000/abc】"></a><strong>10. 请分析嫌疑人手机，嫌疑人老板组织人员参与赌博活动，所使用的国内访问入口地址为？【答题格式：192.168.1.1:1000/abc】</strong></h4><pre><code>192.168.110.110:8000/login
+</code></pre>
+<p>嫌疑人老板就是上题找到的愚蠢的土拨鼠，在微信聊天记录中可以找到赌博网站的国内访问人口</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092336463.png" alt="image-20240525092336463"></p>
+<h4 id="服务器部分"><a href="#服务器部分" class="headerlink" title="服务器部分"></a>服务器部分</h4><h4 id="1、esxi服务器的esxi版本为？【关键字得分，答题格式：1-2】"><a href="#1、esxi服务器的esxi版本为？【关键字得分，答题格式：1-2】" class="headerlink" title="1、esxi服务器的esxi版本为？【关键字得分，答题格式：1.2】"></a><strong>1、esxi服务器的esxi版本为？【关键字得分，答题格式：1.2】</strong></h4><pre><code>6.7
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-42-01.png" alt="Snipaste_2024-05-28_20-42-01"></p>
+<p>由火眼直接得出答案</p>
+<p>运行服务器虚拟机，这里火眼直接将密码清零了</p>
+<p>配置网卡</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-46-04.png" alt="Snipaste_2024-05-28_20-46-04"></p>
+<p>将服务器ip地址与网卡ip地址置于同一网段下</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-47-26.png" alt="Snipaste_2024-05-28_20-47-26"></p>
+<p>使用该网卡即可进入该集群中</p>
+<h4 id="2、请分析ESXi服务器，该系统的安装日期为："><a href="#2、请分析ESXi服务器，该系统的安装日期为：" class="headerlink" title="2、请分析ESXi服务器，该系统的安装日期为："></a><strong>2、请分析ESXi服务器，该系统的安装日期为：</strong></h4><p>A. 2024年3月12日 星期二 02:04:15 UTC</p>
+<p>B. 2024年3月12日 星期二 02:05:15 UTC</p>
+<p>C. 2024年3月12日 星期二 02:06:15 UTC</p>
+<p>D. 2024年3月12日 星期二 02:07:15 UTC</p>
+<pre><code>A
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-48-59.png" alt="Snipaste_2024-05-28_20-48-59"></p>
+<p>直接查看即可</p>
+<h4 id="3、请分析ESXi服务器数据存储“datastore”的UUID是？【答题格式：a1a1-b1b1-c1c1-d1d1】"><a href="#3、请分析ESXi服务器数据存储“datastore”的UUID是？【答题格式：a1a1-b1b1-c1c1-d1d1】" class="headerlink" title="3、请分析ESXi服务器数据存储“datastore”的UUID是？【答题格式：a1a1-b1b1-c1c1-d1d1】"></a><strong>3、请分析ESXi服务器数据存储“datastore”的UUID是？【答题格式：a1a1-b1b1-c1c1-d1d1】</strong></h4><pre><code>65efb8a8-ddd817f6-04ff-000c297bd0e6
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_15-24-57.png" alt="Snipaste_2024-05-29_15-24-57"></p>
+<p>登上主机后挂盘</p>
+<pre><code>esxcfg-volume -l\\查看硬盘=信息
+esxcfg-volume -m &lt;UUID&gt;挂载
+</code></pre>
+<p>之后便可看到</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-50-24.png" alt="Snipaste_2024-05-28_20-50-24"></p>
+<h4 id="4、ESXI服务器的原IP地址？【答题格式：255-255-255-0】"><a href="#4、ESXI服务器的原IP地址？【答题格式：255-255-255-0】" class="headerlink" title="4、ESXI服务器的原IP地址？【答题格式：255.255.255.0】"></a><strong>4、ESXI服务器的原IP地址？【答题格式：255.255.255.0】</strong></h4><pre><code>192.168.8.112
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-55-05.png" alt="Snipaste_2024-05-28_20-55-05"></p>
+<h4 id="5、EXSI服务器中共创建了几个虚拟机？【答题格式：1】"><a href="#5、EXSI服务器中共创建了几个虚拟机？【答题格式：1】" class="headerlink" title="5、EXSI服务器中共创建了几个虚拟机？【答题格式：1】"></a><strong>5、EXSI服务器中共创建了几个虚拟机？【答题格式：1】</strong></h4><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-55-32.png" alt="Snipaste_2024-05-28_20-55-32"></p>
+<p>在更多服务器中能看到</p>
+<h4 id="6、网站服务器绑定的IP地址为？【答题格式：255-255-255-0】"><a href="#6、网站服务器绑定的IP地址为？【答题格式：255-255-255-0】" class="headerlink" title="6、网站服务器绑定的IP地址为？【答题格式：255.255.255.0】"></a><strong>6、网站服务器绑定的IP地址为？【答题格式：255.255.255.0】</strong></h4><pre><code>http://192.168.8.89/
+</code></pre>
+<p>www服务器是网站服务器</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_20-55-32.png" alt="Snipaste_2024-05-28_20-55-32"></p>
+<h4 id="7、网站服务器的登录密码为？【答题格式：abc123】"><a href="#7、网站服务器的登录密码为？【答题格式：abc123】" class="headerlink" title="7、网站服务器的登录密码为？【答题格式：abc123】"></a><strong>7、网站服务器的登录密码为？【答题格式：abc123】</strong></h4><pre><code>qqqqqq
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_21-01-30.png" alt="Snipaste_2024-05-28_21-01-30"></p>
+<p>使用hydra直接爆破网站服务器，密码是在带计算机中储存的，最后得出qqqqqq</p>
+<h4 id="8、网站服务器所使用的管理面板登陆入口地址对应的端口号为：【答案格式：1111】"><a href="#8、网站服务器所使用的管理面板登陆入口地址对应的端口号为：【答案格式：1111】" class="headerlink" title="8、网站服务器所使用的管理面板登陆入口地址对应的端口号为：【答案格式：1111】"></a><strong>8、网站服务器所使用的管理面板登陆入口地址对应的端口号为：【答案格式：1111】</strong></h4><pre><code>
+14131
+</code></pre>
+<p>登录到主机后发现宝塔</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_21-05-37.png" alt="Snipaste_2024-05-28_21-05-37"></p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-28_21-06-15.png" alt="Snipaste_2024-05-28_21-06-15"></p>
+<p>查看宝塔默认信息，发现端口</p>
+<p>重置密码，通过面板地址进入宝塔中</p>
+<h4 id="9、网站服务器的web目录是？【答题格式：-etc】"><a href="#9、网站服务器的web目录是？【答题格式：-etc】" class="headerlink" title="9、网站服务器的web目录是？【答题格式：/etc】"></a><strong>9、网站服务器的web目录是？【答题格式：/etc】</strong></h4><pre><code>/webapp
+</code></pre>
+<p>网站web目录最好寻找index.html，然后确认是否有后端文件，像php、JAVA、python等都是可以作后台文件的，该网站使用JAVA搭的。</p>
+<p>先看www/service的，发现www底下的网站根目录已关闭</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_15-42-48.png" alt="Snipaste_2024-05-29_15-42-48"></p>
+<p>去webapp底下看一下</p>
+<p>发现有jar文件，基本确认为建站目录</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_15-45-13.png" alt="Snipaste_2024-05-29_15-45-13"></p>
+<p>再来看看nginx.conf文件</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_15-52-16.png" alt="Snipaste_2024-05-29_15-52-16"></p>
+<h4 id="10、网站配置中Redis的连接超时时间为多少秒【答题格式：20】"><a href="#10、网站配置中Redis的连接超时时间为多少秒【答题格式：20】" class="headerlink" title="10、网站配置中Redis的连接超时时间为多少秒【答题格式：20】"></a><strong>10、网站配置中Redis的连接超时时间为多少秒【答题格式：20】</strong></h4><pre><code>0
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_15-54-06.png" alt="Snipaste_2024-05-29_15-54-06"></p>
+<h4 id="11、网站普通用户密码中使用的盐值为【答题格式：123abc-】"><a href="#11、网站普通用户密码中使用的盐值为【答题格式：123abc-】" class="headerlink" title="11、网站普通用户密码中使用的盐值为【答题格式：123abc!@#】"></a><strong>11、网站普通用户密码中使用的盐值为【答题格式：123abc!@#】</strong></h4><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_16-04-26.png" alt="Snipaste_2024-05-29_16-04-26"></p>
+<h4 id="12、网站管理员用户密码的加密算法名称是什么"><a href="#12、网站管理员用户密码的加密算法名称是什么" class="headerlink" title="12、网站管理员用户密码的加密算法名称是什么"></a><strong>12、网站管理员用户密码的加密算法名称是什么</strong></h4><p>A. des</p>
+<p>B. rsa</p>
+<p>C. md5</p>
+<p>D. bcrypt</p>
+<pre><code>D
+</code></pre>
+<p>ruoyi的管理员密码生成类在com.ruoyi.common.utils.SecurityUtils</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/9.jpg" alt="图片"></p>
+<h4 id="13、网站超级管理员用户账号创建的时间是？"><a href="#13、网站超级管理员用户账号创建的时间是？" class="headerlink" title="13、网站超级管理员用户账号创建的时间是？"></a><strong>13、网站超级管理员用户账号创建的时间是？</strong></h4><p>A. 2022-05-09 12:44:41</p>
+<p>B. 2022-05-09 13:44:41</p>
+<p>C. 2022-05-09 14:44:41</p>
+<p>D. 2022-05-09 15:44:41</p>
+<pre><code>C
+</code></pre>
+<p>运行start.sh即可启动网站，网站默认是已经启动了的，但是访问会出现系统接口502异常</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtUfXmKdD9p4MBNJt2k8JiaTib4oIcO7aTztwSRdcKyOYicW1Hxt65eZgPw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>导出ruoyi-admin.jar，使用jadx打开，查看配置文件可以看到使用的数据库为本地的ji-mei</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtiaeRjaJD1icvZyicap7hb0FurYKXuKLYcyIq0W9zmS7P6jMIPicI8riacGw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>但是用配置文件中的密码登录会报错</p>
+<p>在宝塔面板中可以看到数据库的位置在192.168.8.142</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgthCFfkdPE6Lmd2g3Bm4icP6p4gk0un7Ys4pN3pPnZzvTtfA4tjniaIAgg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>在data虚拟机上</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtTwhGtI9ftFYzzLzJMBgweUc6alwIrA4oAfgaajpCsoCNPbem7rOqPA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>使用hydra爆破data虚拟机的密码，为hl@7001</p>
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/20240529210002.png"></p>
+<p>ssh远程登录上去，可以看到本地的3306端口未开放</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240529210401907.png" alt="image-20240529210401907"></p>
+<p>本地没有MySQL</p>
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/20240529210423.png"></p>
+<p>可以看到本地有docker服务，启动起来</p>
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240529210451860.png" alt="image-20240529210451860"></p>
+<p>启动mysql容器</p>
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240529212457882.png" alt="image-20240529212457882"></p>
+<p>可以看到是运行在本地的3306端口的，ji-mei用户密码为宝塔面板中看到的密码</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtLn3ZDrlOlCM3Lq0ZzNk6FlH0khg7IlUE37HUWnkeaJwFfJy6cBYtXA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>Navicat测试一下可以连上</p>
+<p><img src="/cjc0729/hl204.github.io.git/../../../../AppData/Roaming/Typora/typora-user-images/image-20240529210643072.png" alt="image-20240529210643072"></p>
+<p>网站超级管理员用户账号创建的时间在ji-mei数据库中的sys_user表中</p>
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240529210727084.png" alt="image-20240529210727084"></p>
+<h4 id="14、重构进入网站之后，用户管理下的用户列表页面默认有多少页数据【答题格式：20】"><a href="#14、重构进入网站之后，用户管理下的用户列表页面默认有多少页数据【答题格式：20】" class="headerlink" title="14、重构进入网站之后，用户管理下的用户列表页面默认有多少页数据【答题格式：20】"></a><strong>14、重构进入网站之后，用户管理下的用户列表页面默认有多少页数据【答题格式：20】</strong></h4><pre><code>877
+</code></pre>
+<p>在www虚拟机中提取出ruoyi-admin.jar的配置文件</p>
+<pre><code>jar xf ruoyi-admin.jar BOOT-INF/classes/application-druid.yml
+</code></pre>
+<p>使用vim命令修改</p>
+<pre><code>vim BOOT-INF/classes/application-druid.yml
+</code></pre>
+<p>将数据库地址修改为data虚拟机的ip，密码修改成宝塔面板中的密码</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtbos4UDbicqAFvK3eBaC8M76qT7xb4NHL3HZDfMnIcYAwulIQTUpviaIg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>更新配置文件到jar包内</p>
+<pre><code>jar uf ruoyi-admin.jar BOOT-INF/classes/application-druid.yml
+</code></pre>
+<p>修改时间变了就说明修改成功</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtlzbgvqkAuDpKs5T3Qiaopjqp5nuIIjmaMboO5qHxEGzT1mtpTKjO36A/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>运行restart.sh重新启动网站发现还是系统接口502异常</p>
+<p>根据计算机中的VC容器中的运维笔记修改一下项目</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtBEhjwrJcQUu3fxf5UHibvlprsiabUkvdMc6coysc2NzPib4VE9j8tK0dQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>redis的修改和修改application-druid.yml的方法一样，修改application.yml即可</p>
+<p>定时任务插件执行时间问题在sys_job表中</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtuwHhiaP8aPhf3mQqomHrn5ib45e8wJTs5FzKKObtapibia8WuwLicOzFyYA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>将下面的在2023年和2024 年的每个1月1日执行任务替换成上面的在每小时的每隔两分钟触发一次，直到任务被停止或调度器关闭为止</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtUs3VOrjicwMOD28en1KUUsvSHvCZ02ZiaeuS94tSibnCU9QOOOu9P0znQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<pre><code>java -jar ruoyi-admin.jar
+</code></pre>
+<p>尝试启动后端</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/FIC/Snipaste_2024-05-29_17-01-22.png" alt="Snipaste_2024-05-29_17-01-22"></p>
+<p>经过bcrypt加密后塞给sys_user的admin</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/FIC/Snipaste_2024-05-29_17-11-58.png" alt="Snipaste_2024-05-29_17-11-58"></p>
+<p>登录后台管理系统</p>
+<h4 id="15、该网站的系统接口文档版本号为【答题格式：1-1-1】"><a href="#15、该网站的系统接口文档版本号为【答题格式：1-1-1】" class="headerlink" title="15、该网站的系统接口文档版本号为【答题格式：1.1.1】"></a><strong>15、该网站的系统接口文档版本号为【答题格式：1.1.1】</strong></h4><pre><code>3.8.2
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtibjXYNo4mle6NfWroce52B4WyTiaJurTlMm5KFyicQVX1f4AkyaWutWdQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="16、该网站获取订单列表的接口【答题格式：-abc-abc】"><a href="#16、该网站获取订单列表的接口【答题格式：-abc-abc】" class="headerlink" title="16、该网站获取订单列表的接口【答题格式：/abc/abc】"></a><strong>16、该网站获取订单列表的接口【答题格式：/abc/abc】</strong></h4><pre><code>/api/shopOrder
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtvFwMTS7pG8IXcXup7S3vVWaiaWwkic9A58ClbsGCM1ufvzo988fIyrIQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="17、受害人卢某的用户ID【答题格式：11223344】"><a href="#17、受害人卢某的用户ID【答题格式：11223344】" class="headerlink" title="17、受害人卢某的用户ID【答题格式：11223344】"></a><strong>17、受害人卢某的用户ID【答题格式：11223344】</strong></h4><pre><code>10044888
+</code></pre>
+<p>根据李某的手机微信聊天记录可知受害人卢某在网站中的账号为lu123456</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtBK2JMShsmAxdZUthy4eBrF79JUD83EMqfhusRnSwWl93jkJxQFXfkA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>在用户管理中搜索lu123456</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtpWLibO5fYdgMEgKG2jRDg2JYXhfBX69Qnmc22via58dL1Jw1VpJa8RuQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="18、受害人卢某一共充值了多少钱【答题格式：123456】"><a href="#18、受害人卢某一共充值了多少钱【答题格式：123456】" class="headerlink" title="18、受害人卢某一共充值了多少钱【答题格式：123456】"></a><strong>18、受害人卢某一共充值了多少钱【答题格式：123456】</strong></h4><pre><code>465222
+</code></pre>
+<p>在支付管理-充值订单中搜索卢某的用户id，一共465222元</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtmIfhB7pSAEIbUxEZl2zGlTibQ9sekwxUnia7mYH312UNCX94pYljo0ww/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="19、网站设置的单次抽奖价格为多少元【答题格式：20】"><a href="#19、网站设置的单次抽奖价格为多少元【答题格式：20】" class="headerlink" title="19、网站设置的单次抽奖价格为多少元【答题格式：20】"></a><strong>19、网站设置的单次抽奖价格为多少元【答题格式：20】</strong></h4><pre><code>10
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/2.jpg" alt="图片"></p>
+<h4 id="20、网站显示的总余额数是【答题格式：20-12】"><a href="#20、网站显示的总余额数是【答题格式：20-12】" class="headerlink" title="20、网站显示的总余额数是【答题格式：20.12】"></a><strong>20、网站显示的总余额数是【答题格式：20.12】</strong></h4><pre><code>7354468.56
+</code></pre>
+<p>在用户管理-用户列表-资金统计可以看到</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/1.jpg" alt="图片"></p>
+<h4 id="21、网站数据库的root密码【答题格式：abc123】"><a href="#21、网站数据库的root密码【答题格式：abc123】" class="headerlink" title="21、网站数据库的root密码【答题格式：abc123】"></a><strong>21、网站数据库的root密码【答题格式：abc123】</strong></h4><pre><code>my-secret-pw
+</code></pre>
+<pre><code>docker inspect 9b
+</code></pre>
+<p>查看容器的元数据</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_17-22-23.png" alt="Snipaste_2024-05-29_17-22-23"></p>
+<p>使用Navicat测试连接成功，可证明为密码</p>
+<h4 id="22、数据库服务器的操作系统版本是【答题格式：1-2-1234】"><a href="#22、数据库服务器的操作系统版本是【答题格式：1-2-1234】" class="headerlink" title="22、数据库服务器的操作系统版本是【答题格式：1.2.1234】"></a><strong>22、数据库服务器的操作系统版本是【答题格式：1.2.1234】</strong></h4><pre><code>7.9.2009
+</code></pre>
+<pre><code>cat /etc/*-releases
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_17-23-50.png" alt="Snipaste_2024-05-29_17-23-50"></p>
+<h4 id="23、数据库服务器的Docker-Server版本是【答题格式：1-10-0】"><a href="#23、数据库服务器的Docker-Server版本是【答题格式：1-10-0】" class="headerlink" title="23、数据库服务器的Docker Server版本是【答题格式：1.10.0】"></a><strong>23、数据库服务器的Docker Server版本是【答题格式：1.10.0】</strong></h4><pre><code>1.13.1
+</code></pre>
+<pre><code>docker info
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_17-25-49.png" alt="Snipaste_2024-05-29_17-25-49"></p>
+<h4 id="24、数据库服务器中数据库容器的完整ID是【答题格式：123abcd】"><a href="#24、数据库服务器中数据库容器的完整ID是【答题格式：123abcd】" class="headerlink" title="24、数据库服务器中数据库容器的完整ID是【答题格式：123abcd】"></a><strong>24、数据库服务器中数据库容器的完整ID是【答题格式：123abcd】</strong></h4><pre><code>9bf1cecec3957a5cd23c24c0915b7d3dd9be5238322ca5646e3d9e708371b765
+</code></pre>
+<p>docker查看容器内容</p>
+<h4 id="25、数据库服务器中数据库容器使用的镜像ID【答题格式：123abcd】"><a href="#25、数据库服务器中数据库容器使用的镜像ID【答题格式：123abcd】" class="headerlink" title="25、数据库服务器中数据库容器使用的镜像ID【答题格式：123abcd】"></a><strong>25、数据库服务器中数据库容器使用的镜像ID【答题格式：123abcd】</strong></h4><pre><code>66c0e7ca4921e941cbdbda9e92242f07fe37c2bcbbaac4af701b4934dfc41d8a
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_17-27-20.png" alt="Snipaste_2024-05-29_17-27-20"></p>
+<h4 id="26、数据库服务器中数据库容器创建的北京时间"><a href="#26、数据库服务器中数据库容器创建的北京时间" class="headerlink" title="26、数据库服务器中数据库容器创建的北京时间"></a><strong>26、数据库服务器中数据库容器创建的北京时间</strong></h4><p>A. 2024/3/13 12:15:23</p>
+<p>B. 2024/3/13 20:15:23</p>
+<p>C. 2024/3/14 00:15:23</p>
+<p>D. 2024/3/13 08:15:23</p>
+<pre><code>B
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-07-48.png" alt="Snipaste_2024-05-29_18-07-48"></p>
+<p>根据自己启动docker容器的时间对比一下发现默认的时间是UTC，需要+8才是正确答案</p>
+<h4 id="27、数据库服务器中数据库容器的ip是【答题格式：255-255-255-0】"><a href="#27、数据库服务器中数据库容器的ip是【答题格式：255-255-255-0】" class="headerlink" title="27、数据库服务器中数据库容器的ip是【答题格式：255.255.255.0】"></a><strong>27、数据库服务器中数据库容器的ip是【答题格式：255.255.255.0】</strong></h4><pre><code>172.17.0.2
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-09-07.png" alt="Snipaste_2024-05-29_18-09-07"></p>
+<h4 id="28、分析数据库数据，在该平台邀请用户进群最多的用户的登录IP是【答题格式：255-255-255-0】"><a href="#28、分析数据库数据，在该平台邀请用户进群最多的用户的登录IP是【答题格式：255-255-255-0】" class="headerlink" title="28、分析数据库数据，在该平台邀请用户进群最多的用户的登录IP是【答题格式：255.255.255.0】"></a><strong>28、分析数据库数据，在该平台邀请用户进群最多的用户的登录IP是【答题格式：255.255.255.0】</strong></h4><pre><code>182.33.2.250
+</code></pre>
+<p>邀请进群相关数据在app_group_member表</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgt56k4JETk3NRRT5wIXOWWnBnqcxI5hWRwlo5SBZyoZPVDwDCsAQCIvA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>筛选一下邀请人数最多的inviter_id</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-25-04.png" alt="Snipaste_2024-05-29_18-25-04"></p>
+<p>再到app_user_info表找到对应用户的登录IP</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-25-04.png" alt="Snipaste_2024-05-29_18-25-04"></p>
+<h4 id="29、分析数据库数据，在该平台抢得最多红包金额的用户的登录IP是【答题格式：255-255-255-0】"><a href="#29、分析数据库数据，在该平台抢得最多红包金额的用户的登录IP是【答题格式：255-255-255-0】" class="headerlink" title="29、分析数据库数据，在该平台抢得最多红包金额的用户的登录IP是【答题格式：255.255.255.0】"></a><strong>29、分析数据库数据，在该平台抢得最多红包金额的用户的登录IP是【答题格式：255.255.255.0】</strong></h4><pre><code>43.139.0.193
+</code></pre>
+<p>抢红包记录在app_user_record表中</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtsD77MT7am68UwnBGUPLcmQgwuLwnylyLaAchQAfk8AJteJnOYUECog/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>筛选一下抢得最多红包金额的用户ID</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtJNZLaNyz6eqcHdICoKQ7xkic4dHVibLPCWH0JZ8eYBYHJUkMWicsI3hHQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>再到app_user_info表找到对应用户的登录IP</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtiamkGkvAw4OP8vgWmOgGM5uIAhQA2JuPSLMhibYeE4ZWIFia5fP2UVTIg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="30、数据库中记录的提现成功的金额总记是多少（不考虑手续费）【答题格式：20-12】"><a href="#30、数据库中记录的提现成功的金额总记是多少（不考虑手续费）【答题格式：20-12】" class="headerlink" title="30、数据库中记录的提现成功的金额总记是多少（不考虑手续费）【答题格式：20.12】"></a><strong>30、数据库中记录的提现成功的金额总记是多少（不考虑手续费）【答题格式：20.12】</strong></h4><pre><code>35821148.48
+</code></pre>
+<p>提现记录在app_user_withdraw表中</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/4.jpg" alt="图片"></p>
+<p>在status列的注释可以看到，3代表成功，统计提现成功的总金额</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/3.jpg" alt="图片"></p>
+<h4 id="31、rocketchat服务器中，有几个真实用户？【答题格式：1】"><a href="#31、rocketchat服务器中，有几个真实用户？【答题格式：1】" class="headerlink" title="31、rocketchat服务器中，有几个真实用户？【答题格式：1】"></a><strong>31、rocketchat服务器中，有几个真实用户？【答题格式：1】</strong></h4><pre><code>3
+</code></pre>
+<p>ESXi面板中打开rocketchat虚拟机，可以看到IP为192.168.8.16</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-31-25.png" alt="Snipaste_2024-05-29_18-31-25"></p>
+<p>根据赵某的计算机Chrome浏览器记录，聊天系统应该是在3000端口上</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/5.jpg" alt="图片"></p>
+<p>访问192.168.8.16:3000</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-32-55.png" alt="Snipaste_2024-05-29_18-32-55"></p>
+<p>使用之前在BitLocker加密分区中找到的账号密码登录，账号<a href="mailto:&#97;&#100;&#x6d;&#105;&#110;&#64;&#x61;&#100;&#109;&#105;&#110;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#100;&#x6d;&#105;&#110;&#64;&#x61;&#100;&#109;&#105;&#110;&#x2e;&#x63;&#x6f;&#x6d;</a>，密码Zhao</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/1d425d1c035e3b4bcd6c26deab4d34d.png" alt="1d425d1c035e3b4bcd6c26deab4d34d"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtmGhreS7ggCibEGA4aLGCCnibjg8L8ytmHFgOTTvHgxbpmVtqbz0GIzTA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>找到管理-Workspace</p>
+<p>查看用户，一个bot，三个真实用户</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-39-31.png" alt="Snipaste_2024-05-29_18-39-31"></p>
+<h4 id="32、rocketchat服务器中，聊天服务的端口号是？【答题格式：80】"><a href="#32、rocketchat服务器中，聊天服务的端口号是？【答题格式：80】" class="headerlink" title="32、rocketchat服务器中，聊天服务的端口号是？【答题格式：80】"></a><strong>32、rocketchat服务器中，聊天服务的端口号是？【答题格式：80】</strong></h4><pre><code>3000
+</code></pre>
+<p>如上题分析</p>
+<h4 id="33、rocketchat服务器中，聊天服务的管理员的邮箱是？【答题格式：-x61-98-x63-64-x61-98-x63-x2e-x63-x6f-x6d-】"><a href="#33、rocketchat服务器中，聊天服务的管理员的邮箱是？【答题格式：-x61-98-x63-64-x61-98-x63-x2e-x63-x6f-x6d-】" class="headerlink" title="33、rocketchat服务器中，聊天服务的管理员的邮箱是？【答题格式：&#x61;&#98;&#x63;&#64;&#x61;&#98;&#x63;&#x2e;&#x63;&#x6f;&#x6d;】"></a><strong>33、rocketchat服务器中，聊天服务的管理员的邮箱是？【答题格式：<a href="mailto:&#x61;&#98;&#x63;&#64;&#x61;&#98;&#x63;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#98;&#x63;&#64;&#x61;&#98;&#x63;&#x2e;&#x63;&#x6f;&#x6d;</a>】</strong></h4><pre><code>admin@admin.com
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-39-31.png" alt="Snipaste_2024-05-29_18-39-31"></p>
+<h4 id="34、rocketchat服务器中，聊天服务使用的数据库的版本号是？【答题格式：1-2-34】"><a href="#34、rocketchat服务器中，聊天服务使用的数据库的版本号是？【答题格式：1-2-34】" class="headerlink" title="34、rocketchat服务器中，聊天服务使用的数据库的版本号是？【答题格式：1.2.34】"></a><strong>34、rocketchat服务器中，聊天服务使用的数据库的版本号是？【答题格式：1.2.34】</strong></h4><pre><code>5.0.24
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-40-36.png" alt="Snipaste_2024-05-29_18-40-36"></p>
+<h4 id="35、rocketchat服务器中，最大的文件上传大小是？（以字节为单位）【答题格式：1024】"><a href="#35、rocketchat服务器中，最大的文件上传大小是？（以字节为单位）【答题格式：1024】" class="headerlink" title="35、rocketchat服务器中，最大的文件上传大小是？（以字节为单位）【答题格式：1024】"></a><strong>35、rocketchat服务器中，最大的文件上传大小是？（以字节为单位）【答题格式：1024】</strong></h4><pre><code>104857600
+</code></pre>
+<p>在设置里面找到文件上传</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_18-42-01.png" alt="Snipaste_2024-05-29_18-42-01"></p>
+<h4 id="36、rocketchat服务器中，管理员账号的创建时间为？"><a href="#36、rocketchat服务器中，管理员账号的创建时间为？" class="headerlink" title="36、rocketchat服务器中，管理员账号的创建时间为？"></a><strong>36、rocketchat服务器中，管理员账号的创建时间为？</strong></h4><p>A. 2024/3/14 8:18:54</p>
+<p>B. 2024/3/14 8:19:54</p>
+<p>C. 2024/3/14 8:17:54</p>
+<p>D. 2024/3/14 8:15:54</p>
+<pre><code>B
+</code></pre>
+<p>rocketchat服务器密码爆破不出来</p>
+<p>参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuzhen689/articles/13657903.html">谜底就在谜面上,密码是debian 如何重置Debian 10系统的root登录密码.Debian 10 默认密码是debian - liuzhen689 - 博客园 (cnblogs.com)</a>重置root密码</p>
+<p>查看网络连接信息发现3000端口是docker占用的</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-13-55.png" alt="Snipaste_2024-05-29_19-13-55"></p>
+<p>查看docker容器列表发现mongodb也是运行在一个docker容器中</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-14-47.png" alt="Snipaste_2024-05-29_19-14-47"></p>
+<p>查看容器元数据发现可以空密码登录，端口在27017</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-21-00.png" alt="Snipaste_2024-05-29_19-21-00"></p>
+<p>查看容器元数据可以得到容器的ip为172.18.0.2</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtASgxGm4gFOXsiaQfXgmRgLyC7vEqK0w7fyUeqCBuBSpevrXfHJMNTjg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>Navicat走ssh通道登录mongodb</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-33-58.png" alt="Snipaste_2024-05-29_19-33-58"></p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-34-20.png" alt="Snipaste_2024-05-29_19-34-20"></p>
+<p>查看rocketchat数据库中的users集合中的内容即可得到管理员账号的创建时间</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-35-31.png" alt="Snipaste_2024-05-29_19-35-31"></p>
+<h4 id="37、rocketchat服务器中，技术员提供的涉诈网站地址是？【答题格式：http-192-168-1-1】"><a href="#37、rocketchat服务器中，技术员提供的涉诈网站地址是？【答题格式：http-192-168-1-1】" class="headerlink" title="37、rocketchat服务器中，技术员提供的涉诈网站地址是？【答题格式：http://192.168.1.1】"></a><strong>37、rocketchat服务器中，技术员提供的涉诈网站地址是？【答题格式：<a target="_blank" rel="noopener" href="http://192.168.1.1】/">http://192.168.1.1】</a></strong></h4><pre><code>http://172.16.80.47
+</code></pre>
+<p>有关杀猪盘的聊天记录可以在李某与老苏的微信聊天记录中找到</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgt6j03GO3C6AGSV6JaUYjtoSvF3icy5YqR29R36uAJqysKKw3IEpgq0AA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>查看rocketchat_message集合可以看到聊天记录</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtSTQ6gPOyVicrouT9M1FgyYWjbvdhWFpT30HNzJtm5Ol50yMmGTtDjbg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="38、综合分析服务器，该团伙的利润分配方案中，老李的利润占比是多少【答题格式：10-】"><a href="#38、综合分析服务器，该团伙的利润分配方案中，老李的利润占比是多少【答题格式：10-】" class="headerlink" title="38、综合分析服务器，该团伙的利润分配方案中，老李的利润占比是多少【答题格式：10%】"></a><strong>38、综合分析服务器，该团伙的利润分配方案中，老李的利润占比是多少【答题格式：10%】</strong></h4><pre><code>35%
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtLdtTnVtNSnia1MS5VSOjJaKdia82VFuUf8c12rv1HucZsSEfLgMmUr2Q/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="39、综合分析服务器，该团队“杀猪盘”收网的可能时间段为"><a href="#39、综合分析服务器，该团队“杀猪盘”收网的可能时间段为" class="headerlink" title="39、综合分析服务器，该团队“杀猪盘”收网的可能时间段为"></a><strong>39、综合分析服务器，该团队“杀猪盘”收网的可能时间段为</strong></h4><p>A. 2024/3/15 15:00:00-16:00:00</p>
+<p>B. 2024/3/15 16:00:00-17:00:00</p>
+<p>C. 2024/3/15 17:00:00-18:00:00</p>
+<p>D. 2024/3/15 18:00:00-19:00:00</p>
+<pre><code>B
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtVDX9B7o9XL6LZibR7deicRiakNAAloISjvyrw4qH5Tq9tfXDngVS1Oic2Q/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>这里的时间应该是UTC，需要+8才能得到正确答案</p>
+<p>时区可以通过登录聊天网站的时间判断</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtCc4UaKic0FkvPxoOPLn8lmSRepH0MGVLPv9Dw7RF9a8Ly5oMJcftkxA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="40-请综合分析，警方未抓获的重要嫌疑人，其使用聊天平台时注册邮箱号为？【答题格式：-97-x62-99-x40-97-97-x2e-99-111-109-】"><a href="#40-请综合分析，警方未抓获的重要嫌疑人，其使用聊天平台时注册邮箱号为？【答题格式：-97-x62-99-x40-97-97-x2e-99-111-109-】" class="headerlink" title="40. 请综合分析，警方未抓获的重要嫌疑人，其使用聊天平台时注册邮箱号为？【答题格式：&#97;&#x62;&#99;&#x40;&#97;&#97;&#x2e;&#99;&#111;&#109;】"></a><strong>40. 请综合分析，警方未抓获的重要嫌疑人，其使用聊天平台时注册邮箱号为？【答题格式：<a href="mailto:&#97;&#x62;&#99;&#x40;&#97;&#97;&#x2e;&#99;&#111;&#109;">&#97;&#x62;&#99;&#x40;&#97;&#97;&#x2e;&#99;&#111;&#109;</a>】</strong></h4><pre><code>lao@su.com
+</code></pre>
+<p>未抓获的嫌疑人为老苏</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgt7yCkl7G3OziaYqzPlN76CSCs6VMn6ZvzML96j4NoaR8IC7urV1ibovqQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="41-分析openwrt镜像，该系统的主机名为【答题格式：MyPC】"><a href="#41-分析openwrt镜像，该系统的主机名为【答题格式：MyPC】" class="headerlink" title="41. 分析openwrt镜像，该系统的主机名为【答题格式：MyPC】"></a><strong>41. 分析openwrt镜像，该系统的主机名为【答题格式：MyPC】</strong></h4><pre><code>iStoreOS
+</code></pre>
+<p>打开openwrt虚拟机</p>
+<p>查看/etc/*release</p>
+<pre><code>cat /etc/*release|less
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-42-21.png" alt="Snipaste_2024-05-29_19-42-21"></p>
+<h4 id="42-分析openwrt镜像，该系统的内核版本为【答题格式：12-34-56】"><a href="#42-分析openwrt镜像，该系统的内核版本为【答题格式：12-34-56】" class="headerlink" title="42. 分析openwrt镜像，该系统的内核版本为【答题格式：12.34.56】"></a><strong>42. 分析openwrt镜像，该系统的内核版本为【答题格式：12.34.56】</strong></h4><pre><code>5.10.201
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-44-31.png" alt="Snipaste_2024-05-29_19-44-31"></p>
+<h4 id="43-分析openwrt镜像，该静态ip地址为【答题格式：192-168-1-1】"><a href="#43-分析openwrt镜像，该静态ip地址为【答题格式：192-168-1-1】" class="headerlink" title="43. 分析openwrt镜像，该静态ip地址为【答题格式：192.168.1.1】"></a><strong>43. 分析openwrt镜像，该静态ip地址为【答题格式：192.168.1.1】</strong></h4><pre><code>192.168.8.5
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-45-58.png" alt="Snipaste_2024-05-29_19-45-58"></p>
+<p>结合赵某计算机的Chrome浏览器历史记录确定</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtGWqiadgm0kKy26yDBxMoOM0PRKYDtURtFXFmG7UkFEiaokYEpujW2jOw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="44-分析openwrt镜像，所用网卡的名称为【答题格式：abc123】"><a href="#44-分析openwrt镜像，所用网卡的名称为【答题格式：abc123】" class="headerlink" title="44. 分析openwrt镜像，所用网卡的名称为【答题格式：abc123】"></a><strong>44. 分析openwrt镜像，所用网卡的名称为【答题格式：abc123】</strong></h4><pre><code>br-lan
+</code></pre>
+<p>如上题</p>
+<h4 id="45-分析openwrt镜像，该系统中装的docker的版本号为【答题格式：12-34-56】"><a href="#45-分析openwrt镜像，该系统中装的docker的版本号为【答题格式：12-34-56】" class="headerlink" title="45. 分析openwrt镜像，该系统中装的docker的版本号为【答题格式：12.34.56】"></a><strong>45. 分析openwrt镜像，该系统中装的docker的版本号为【答题格式：12.34.56】</strong></h4><pre><code>20.10.22
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-47-00.png" alt="Snipaste_2024-05-29_19-47-00"></p>
+<p>在赵某计算机Chrome中保存了openwrt的账号密码</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtgxOLKGfPpQygpsgAeeAMVqeyVjicCjJttRwj4hmNFH4w24kOKGOibjYQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>登录web端</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtibU7RxFeu6EkLRTas6gbY2CbXdYxkibeOpgtMwZQy3hJrRvTPlynMUPw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="46-分析openwrt镜像，nastools的配置文件路径为【答题格式：-abc-abc-abc】"><a href="#46-分析openwrt镜像，nastools的配置文件路径为【答题格式：-abc-abc-abc】" class="headerlink" title="46. 分析openwrt镜像，nastools的配置文件路径为【答题格式：/abc/abc/abc】"></a><strong>46. 分析openwrt镜像，nastools的配置文件路径为【答题格式：/abc/abc/abc】</strong></h4><pre><code>/root/Configs/NasTools
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-49-18.png" alt="Snipaste_2024-05-29_19-49-18"></p>
+<h4 id="47-分析openwrt镜像，使用的vpn代理软件为【答题格式（忽略大小写）：abc123】"><a href="#47-分析openwrt镜像，使用的vpn代理软件为【答题格式（忽略大小写）：abc123】" class="headerlink" title="47. 分析openwrt镜像，使用的vpn代理软件为【答题格式（忽略大小写）：abc123】"></a><strong>47. 分析openwrt镜像，使用的vpn代理软件为【答题格式（忽略大小写）：abc123】</strong></h4><pre><code>PassWall2
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/icibg2e0gUOoFticVbGhaAt1SU4jleDxtgtJE6TIGicVicLP5JVszE4e2YTtqibLhRtfymlYozdc5icLaiajIcA36R3jYw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="48-分析openwrt镜像，vpn实际有多少个可用节点【答题格式：6】"><a href="#48-分析openwrt镜像，vpn实际有多少个可用节点【答题格式：6】" class="headerlink" title="48. 分析openwrt镜像，vpn实际有多少个可用节点【答题格式：6】"></a><strong>48. 分析openwrt镜像，vpn实际有多少个可用节点【答题格式：6】</strong></h4><pre><code>54
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-50-17.png" alt="Snipaste_2024-05-29_19-50-17"></p>
+<h4 id="49、分析openwrt镜像，节点socks的监听端口是多少【答题格式：1234】"><a href="#49、分析openwrt镜像，节点socks的监听端口是多少【答题格式：1234】" class="headerlink" title="49、分析openwrt镜像，节点socks的监听端口是多少【答题格式：1234】"></a><strong>49、分析openwrt镜像，节点socks的监听端口是多少【答题格式：1234】</strong></h4><pre><code>1070
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-51-09.png" alt="Snipaste_2024-05-29_19-51-09"></p>
+<h4 id="50、分析openwrt镜像，vpn的订阅链接是【答题格式：http-www-baidu-com-aaa-bbb-ccc-ddd-privatekey-abc123456789】"><a href="#50、分析openwrt镜像，vpn的订阅链接是【答题格式：http-www-baidu-com-aaa-bbb-ccc-ddd-privatekey-abc123456789】" class="headerlink" title="50、分析openwrt镜像，vpn的订阅链接是【答题格式：http://www.baidu.com/aaa/bbb/ccc/ddd?privatekey=abc123456789】"></a><strong>50、分析openwrt镜像，vpn的订阅链接是【答题格式：<a target="_blank" rel="noopener" href="http://www.baidu.com/aaa/bbb/ccc/ddd?privatekey=abc123456789%E3%80%91">http://www.baidu.com/aaa/bbb/ccc/ddd?privatekey=abc123456789】</a></strong></h4><pre><code>https://pqjc.site/api/v1/client/subscribe?token=243d7bf31ca985f8d496ce078333196a
+</code></pre>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/Snipaste_2024-05-29_19-52-30.png" alt="Snipaste_2024-05-29_19-52-30"></p>
+<h4 id="计算机部分"><a href="#计算机部分" class="headerlink" title="计算机部分"></a>计算机部分</h4><h4 id="1-分析技术员赵某的windows镜像，并计算赵某计算机的原始镜像的SHA1值为？忽略大小写"><a href="#1-分析技术员赵某的windows镜像，并计算赵某计算机的原始镜像的SHA1值为？忽略大小写" class="headerlink" title="1.分析技术员赵某的windows镜像，并计算赵某计算机的原始镜像的SHA1值为？忽略大小写"></a>1.<strong>分析技术员赵某的windows镜像，并计算赵某计算机的原始镜像的SHA1值为？忽略大小写</strong></h4><h6 id="FFD2777C0B966D5FC07F2BAED1DA5782F8DE5AD6"><a href="#FFD2777C0B966D5FC07F2BAED1DA5782F8DE5AD6" class="headerlink" title="FFD2777C0B966D5FC07F2BAED1DA5782F8DE5AD6"></a><code>FFD2777C0B966D5FC07F2BAED1DA5782F8DE5AD6</code></h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092011649.png" alt="image-20240525092011649"></p>
+<p>火眼计算哈希</p>
+<h4 id="2-分析技术员赵某的windows镜像，疑似VeraCrypt加密容器的文件的SHA1值为？忽略大小写"><a href="#2-分析技术员赵某的windows镜像，疑似VeraCrypt加密容器的文件的SHA1值为？忽略大小写" class="headerlink" title="2.分析技术员赵某的windows镜像，疑似VeraCrypt加密容器的文件的SHA1值为？忽略大小写"></a>2.分析技术员赵某的windows镜像，疑似VeraCrypt加密容器的文件的SHA1值为？忽略大小写</h4><h6 id="B25E2804B586394778C800D410ED7BCDC05A19C8"><a href="#B25E2804B586394778C800D410ED7BCDC05A19C8" class="headerlink" title="B25E2804B586394778C800D410ED7BCDC05A19C8"></a>B25E2804B586394778C800D410ED7BCDC05A19C8</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092340671.png" alt="image-20240525092340671"></p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092316011.png" alt="image-20240525092316011"></p>
+<p>在火眼耗时任务中选择特征分析，可以看见一个VC容器。或者仿真后在虚拟机文档中发现一个疑似文件</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525092647246.png" alt="image-20240525092647246"></p>
+<h4 id="3-据赵某供述，他会将常用的密码放置在一个文档内，分析技术员赵某的windows镜像，找到技术员赵某的密码字典，并计算该文件的SHA1值？忽略大小写"><a href="#3-据赵某供述，他会将常用的密码放置在一个文档内，分析技术员赵某的windows镜像，找到技术员赵某的密码字典，并计算该文件的SHA1值？忽略大小写" class="headerlink" title="3.据赵某供述，他会将常用的密码放置在一个文档内，分析技术员赵某的windows镜像，找到技术员赵某的密码字典，并计算该文件的SHA1值？忽略大小写"></a>3.据赵某供述，他会将常用的密码放置在一个文档内，分析技术员赵某的windows镜像，找到技术员赵某的密码字典，并计算该文件的SHA1值？忽略大小写</h4><h6 id="E6EB3D28C53E903A71880961ABB553EF09089007"><a href="#E6EB3D28C53E903A71880961ABB553EF09089007" class="headerlink" title="E6EB3D28C53E903A71880961ABB553EF09089007"></a>E6EB3D28C53E903A71880961ABB553EF09089007</h6><p>仿真后同样在文档中发现commonPwd.txt，导出计算或者在火眼中找到计算</p>
+<h4 id="4-据赵某供述，他将加密容器的密码隐写在一张图片内，隐写在图片中的容器密码是？"><a href="#4-据赵某供述，他将加密容器的密码隐写在一张图片内，隐写在图片中的容器密码是？" class="headerlink" title="4. 据赵某供述，他将加密容器的密码隐写在一张图片内，隐写在图片中的容器密码是？"></a>4. 据赵某供述，他将加密容器的密码隐写在一张图片内，隐写在图片中的容器密码是？</h4><h6 id="qwerasdfzxcv"><a href="#qwerasdfzxcv" class="headerlink" title="qwerasdfzxcv"></a>qwerasdfzxcv</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525093522479.png" alt="image-20240525093522479"></p>
+<p>隐写在虚拟机文档中的pswd.jpg，不是图片中的密码。可以直接右键用记事本打开，或者导出用010打开，最后就是真正的密码</p>
+<p>也可以在火眼耗时任务中选择隐写识别，直接看到隐藏文件</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525093757135.png" alt="image-20240525093757135"></p>
+<h4 id="5-分析技术员赵某的windows镜像，bitlocker的恢复密钥是什么【答题格式：111111-222222-333333-444444-555555-666666-777777-888888】"><a href="#5-分析技术员赵某的windows镜像，bitlocker的恢复密钥是什么【答题格式：111111-222222-333333-444444-555555-666666-777777-888888】" class="headerlink" title="5. 分析技术员赵某的windows镜像，bitlocker的恢复密钥是什么【答题格式：111111-222222-333333-444444-555555-666666-777777-888888】"></a>5. <strong>分析技术员赵某的windows镜像，bitlocker的恢复密钥是什么【答题格式：111111-222222-333333-444444-555555-666666-777777-888888】</strong></h4><h6 id="404052-011088-453090-291500-377751-349536-330429-257235"><a href="#404052-011088-453090-291500-377751-349536-330429-257235" class="headerlink" title="404052-011088-453090-291500-377751-349536-330429-257235"></a>404052-011088-453090-291500-377751-349536-330429-257235</h6><p>在虚拟机中用上题得到的密码挂载VC，获得密钥</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525094242249.png" alt="image-20240525094242249"></p>
+<h4 id="6-分析技术员赵某的windows镜像，bitlocker分区的起始扇区数是【答题格式：1024】"><a href="#6-分析技术员赵某的windows镜像，bitlocker分区的起始扇区数是【答题格式：1024】" class="headerlink" title="6. 分析技术员赵某的windows镜像，bitlocker分区的起始扇区数是【答题格式：1024】"></a>6. <strong>分析技术员赵某的windows镜像，bitlocker分区的起始扇区数是【答题格式：1024】</strong></h4><h6 id="146794496"><a href="#146794496" class="headerlink" title="146794496"></a>146794496</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525094536708.png" alt="image-20240525094536708"></p>
+<p>在火眼分区详情能看见</p>
+<h4 id="7-分析技术员赵某的windows镜像，默认的浏览器是"><a href="#7-分析技术员赵某的windows镜像，默认的浏览器是" class="headerlink" title="7. 分析技术员赵某的windows镜像，默认的浏览器是"></a>7. <strong>分析技术员赵某的windows镜像，默认的浏览器是</strong></h4><h6 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525094713201.png" alt="image-20240525094713201"></p>
+<p>火眼基本信息中的默认浏览器可见</p>
+<h4 id="8-分析技术员赵某的windows镜像，私有聊天服务器的密码为【答题格式：abc123】"><a href="#8-分析技术员赵某的windows镜像，私有聊天服务器的密码为【答题格式：abc123】" class="headerlink" title="8. 分析技术员赵某的windows镜像，私有聊天服务器的密码为【答题格式：abc123】"></a>8. <strong>分析技术员赵某的windows镜像，私有聊天服务器的密码为【答题格式：abc123】</strong></h4><h6 id="Zhao"><a href="#Zhao" class="headerlink" title="Zhao"></a>Zhao</h6><p>虚拟机点E盘选择输入恢复密钥，打开E盘</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525095119668.png" alt="image-20240525095119668"></p>
+<h4 id="9-分析技术员赵某的windows镜像，嫌疑人计算机中有疑似使用AI技术生成的进行赌博宣传的图片，该图片中，宣传的赌博网站地址为？【答题格式：www-baidu-com】"><a href="#9-分析技术员赵某的windows镜像，嫌疑人计算机中有疑似使用AI技术生成的进行赌博宣传的图片，该图片中，宣传的赌博网站地址为？【答题格式：www-baidu-com】" class="headerlink" title="9. 分析技术员赵某的windows镜像，嫌疑人计算机中有疑似使用AI技术生成的进行赌博宣传的图片，该图片中，宣传的赌博网站地址为？【答题格式：www.baidu.com】"></a>9. <strong>分析技术员赵某的windows镜像，嫌疑人计算机中有疑似使用AI技术生成的进行赌博宣传的图片，该图片中，宣传的赌博网站地址为？【答题格式：<a target="_blank" rel="noopener" href="http://www.baidu.com】/">www.baidu.com】</a></strong></h4><h6 id="www-585975-com"><a href="#www-585975-com" class="headerlink" title="www.585975.com"></a><a target="_blank" rel="noopener" href="http://www.585975.com/">www.585975.com</a></h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525095253668.png" alt="image-20240525095253668"></p>
+<p>E盘图片可见</p>
+<h4 id="10-分析技术员赵某的windows镜像，赵某使用的AI换脸工具名称为？"><a href="#10-分析技术员赵某的windows镜像，赵某使用的AI换脸工具名称为？" class="headerlink" title="10. 分析技术员赵某的windows镜像，赵某使用的AI换脸工具名称为？"></a>10. <strong>分析技术员赵某的windows镜像，赵某使用的AI换脸工具名称为？</strong></h4><h6 id="roop"><a href="#roop" class="headerlink" title="roop"></a>roop</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525095425505.png" alt="image-20240525095425505"></p>
+<p>虚拟机D盘中能找到这个AI工具</p>
+<h4 id="11-分析技术员赵某的windows镜像，使用AI换脸功能生成了一张图片，该图片的名称为【答题格式：1-txt】"><a href="#11-分析技术员赵某的windows镜像，使用AI换脸功能生成了一张图片，该图片的名称为【答题格式：1-txt】" class="headerlink" title="11. 分析技术员赵某的windows镜像，使用AI换脸功能生成了一张图片，该图片的名称为【答题格式：1.txt】"></a>11. <strong>分析技术员赵某的windows镜像，使用AI换脸功能生成了一张图片，该图片的名称为【答题格式：1.txt】</strong></h4><h6 id="db-jpg"><a href="#db-jpg" class="headerlink" title="db.jpg"></a>db.jpg</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525095732433.png" alt="image-20240525095732433"></p>
+<p>终端历史记录的powershell中可以找到这条命令</p>
+<h4 id="12-分析技术员赵某的windows镜像，ai换脸生成图片的参数中–similar-face-distance值为【答题格式：20-12】"><a href="#12-分析技术员赵某的windows镜像，ai换脸生成图片的参数中–similar-face-distance值为【答题格式：20-12】" class="headerlink" title="12. 分析技术员赵某的windows镜像，ai换脸生成图片的参数中–similar-face-distance值为【答题格式：20.12】"></a>12. <strong>分析技术员赵某的windows镜像，ai换脸生成图片的参数中–similar-face-distance值为【答题格式：20.12】</strong></h4><h6 id="0-85"><a href="#0-85" class="headerlink" title="0.85"></a>0.85</h6><p>同上题，也可以在虚拟机中打开该软件，发现相似度为0.85</p>
+<p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525100026111.png" alt="image-20240525100026111"></p>
+<h4 id="13-分析技术员赵某的windows镜像，嫌疑人使用AI换脸功能所使用的原始图片名称为【答题格式：abc-txt】"><a href="#13-分析技术员赵某的windows镜像，嫌疑人使用AI换脸功能所使用的原始图片名称为【答题格式：abc-txt】" class="headerlink" title="13. 分析技术员赵某的windows镜像，嫌疑人使用AI换脸功能所使用的原始图片名称为【答题格式：abc.txt】"></a>13. <strong>分析技术员赵某的windows镜像，嫌疑人使用AI换脸功能所使用的原始图片名称为【答题格式：abc.txt】</strong></h4><h6 id="dst01-jpeg"><a href="#dst01-jpeg" class="headerlink" title="dst01.jpeg"></a>dst01.jpeg</h6><p>同11题</p>
+<h4 id="14-分析技术员赵某的windows镜像，赵某与李某沟通中提到的“二维码”解密所用的网站url地址为？【答题格式：http-www-baidu-com-1-html】"><a href="#14-分析技术员赵某的windows镜像，赵某与李某沟通中提到的“二维码”解密所用的网站url地址为？【答题格式：http-www-baidu-com-1-html】" class="headerlink" title="14. 分析技术员赵某的windows镜像，赵某与李某沟通中提到的“二维码”解密所用的网站url地址为？【答题格式：http://www.baidu.com/1.html】"></a>14. <strong>分析技术员赵某的windows镜像，赵某与李某沟通中提到的“二维码”解密所用的网站url地址为？【答题格式：<a target="_blank" rel="noopener" href="http://www.baidu.com/1.html%E3%80%91">http://www.baidu.com/1.html】</a></strong></h4><h6 id="http-hi-pcmoe-net-buddha-html"><a href="#http-hi-pcmoe-net-buddha-html" class="headerlink" title="http://hi.pcmoe.net/buddha.html"></a><a target="_blank" rel="noopener" href="http://hi.pcmoe.net/buddha.html">http://hi.pcmoe.net/buddha.html</a></h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525100232952.png" alt="image-20240525100232952"></p>
+<p>由二维码可知解密网站是佛曰，在火眼或者虚拟机的历史记录中都能找到</p>
+<h4 id="15-分析技术员赵某的windows镜像，赵某架设聊天服务器的原始IP地址为？【答题格式：192-168-1-1】"><a href="#15-分析技术员赵某的windows镜像，赵某架设聊天服务器的原始IP地址为？【答题格式：192-168-1-1】" class="headerlink" title="15. 分析技术员赵某的windows镜像，赵某架设聊天服务器的原始IP地址为？【答题格式：192.168.1.1】"></a>15. <strong>分析技术员赵某的windows镜像，赵某架设聊天服务器的原始IP地址为？【答题格式：192.168.1.1】</strong></h4><h6 id="192-168-8-17"><a href="#192-168-8-17" class="headerlink" title="192.168.8.17"></a>192.168.8.17</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525100650630.png" alt="image-20240525100650630"></p>
+<p>通过admin和users判断应该是聊天服务器</p>
+<h4 id="16-分析技术员赵某的windows镜像，据赵某交代，其在窝点中直接操作服务器进行部署，环境搭建好了之后，使用个人计算机登录聊天室进行沟通，请分析赵某第一次访问聊天室的时间为？"><a href="#16-分析技术员赵某的windows镜像，据赵某交代，其在窝点中直接操作服务器进行部署，环境搭建好了之后，使用个人计算机登录聊天室进行沟通，请分析赵某第一次访问聊天室的时间为？" class="headerlink" title="16. 分析技术员赵某的windows镜像，据赵某交代，其在窝点中直接操作服务器进行部署，环境搭建好了之后，使用个人计算机登录聊天室进行沟通，请分析赵某第一次访问聊天室的时间为？"></a>16. <strong>分析技术员赵某的windows镜像，据赵某交代，其在窝点中直接操作服务器进行部署，环境搭建好了之后，使用个人计算机登录聊天室进行沟通，请分析赵某第一次访问聊天室的时间为？</strong></h4><h6 id="2024-03-14-20-32-08"><a href="#2024-03-14-20-32-08" class="headerlink" title="2024-03-14 20:32:08"></a>2024-03-14 20:32:08</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525100920569.png" alt="image-20240525100920569"></p>
+<p>用访问时间排序</p>
+<h4 id="17-分析技术员赵某的windows镜像，openwrt的后台管理密码是"><a href="#17-分析技术员赵某的windows镜像，openwrt的后台管理密码是" class="headerlink" title="17. 分析技术员赵某的windows镜像，openwrt的后台管理密码是"></a>17. <strong>分析技术员赵某的windows镜像，openwrt的后台管理密码是</strong></h4><h6 id="hl-7001"><a href="#hl-7001" class="headerlink" title="hl@7001"></a>hl@7001</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525101123296.png" alt="image-20240525101123296"></p>
+<p>火眼看见保存的密码</p>
+<h4 id="18-分析技术员赵某的windows镜像，嫌疑人可能使用什么云来进行文件存储？【答题格式：阿里云】"><a href="#18-分析技术员赵某的windows镜像，嫌疑人可能使用什么云来进行文件存储？【答题格式：阿里云】" class="headerlink" title="18. 分析技术员赵某的windows镜像，嫌疑人可能使用什么云来进行文件存储？【答题格式：阿里云】"></a>18. <strong>分析技术员赵某的windows镜像，嫌疑人可能使用什么云来进行文件存储？【答题格式：阿里云】</strong></h4><h6 id="易有云"><a href="#易有云" class="headerlink" title="易有云"></a>易有云</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525101243981.png" alt="image-20240525101243981"></p>
+<p>在历史记录中发现许多易有云记录</p>
+<h4 id="19-分析技术员赵某的windows镜像，工资表密码是多少【答题格式：abc123】"><a href="#19-分析技术员赵某的windows镜像，工资表密码是多少【答题格式：abc123】" class="headerlink" title="19.分析技术员赵某的windows镜像，工资表密码是多少【答题格式：abc123】"></a>19.<strong>分析技术员赵某的windows镜像，工资表密码是多少【答题格式：abc123】</strong></h4><h6 id="aa123456"><a href="#aa123456" class="headerlink" title="aa123456"></a>aa123456</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525101458664.png" alt="image-20240525101458664"></p>
+<p>文件在虚拟机E盘，可以用文档中的密码字典爆破</p>
+<p>输错两次后可以看见提示“aa”，字典中有aa的密码只有两个，手动尝试即可。</p>
+<h4 id="20-分析技术员赵某的windows镜像，张伟的工资是多少【答题格式：20】"><a href="#20-分析技术员赵某的windows镜像，张伟的工资是多少【答题格式：20】" class="headerlink" title="20.分析技术员赵某的windows镜像，张伟的工资是多少【答题格式：20】"></a>20.<strong>分析技术员赵某的windows镜像，张伟的工资是多少【答题格式：20】</strong></h4><h6 id="28300"><a href="#28300" class="headerlink" title="28300"></a>28300</h6><p><img src="/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/hl204.github.io.git/image-20240525101752254.png" alt="image-20240525101752254"></p>
+<p>接上题打开名单，第一个就是</p>
+<p>以上仅为个人观点，如有不对，请各位大佬指正。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/cjc0729/hl204.github.io.git/about" rel="external nofollow noreferrer">葛星宇，张博延，陈继超</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/">https://github.com/cjc0729/hl204.github.io.git/cjc0729/hl204.github.io.git/2024/07/26/FIC/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/cjc0729/hl204.github.io.git/about" target="_blank">葛星宇，张博延，陈继超</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/">
+                                    <span class="chip bg-color">电子取证</span>
+                                </a>
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/%E9%A2%98%E8%A7%A3/">
+                                    <span class="chip bg-color">题解</span>
+                                </a>
+                            
+                                <a href="/cjc0729/hl204.github.io.git/tags/%E6%AF%94%E8%B5%9B/">
+                                    <span class="chip bg-color">比赛</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/cjc0729/hl204.github.io.git/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/cjc0729/hl204.github.io.git/2024/07/26/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/cjc0729/hl204.github.io.git/medias/featureimages/25.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            黄麓204
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/cjc0729/hl204.github.io.git/2024/05/25/yundajian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/cjc0729/hl204.github.io.git/medias/featureimages/34.jpg" class="responsive-img" alt="在云端上搭hexo博客">
+                        
+                        <span class="card-title">在云端上搭hexo博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            云端搭建hexo
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/cjc0729/hl204.github.io.git/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/cjc0729/hl204.github.io.git/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/cjc0729/hl204.github.io.git/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/cjc0729/hl204.github.io.git/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2024</span>
+            
+            <span id="year">2021</span>
+            <a href="/cjc0729/hl204.github.io.git/about" target="_blank">黄麓204</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/cjc0729/hl204.github.io.git/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/cjc0729/hl204.github.io.git/libs/materialize/materialize.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/aos/aos.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/cjc0729/hl204.github.io.git/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/cjc0729/hl204.github.io.git/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/cjc0729/hl204.github.io.git/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/cjc0729/hl204.github.io.git/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/cjc0729/hl204.github.io.git/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/cjc0729/hl204.github.io.git/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+	<script type="text/javascript">
+    var a_idx = 0;
+jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+        var a = new Array("黄","麓","204");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FF0000"
+        });
+        $("body").append($i);
+        $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            3000,
+            function () {
+                $i.remove();
+            });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+
+    </script>
+
+<script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "记得回来黄麓204~", clearTimeout(st)) : (document.title =
+            "你已进入黄麓204，前方高能！", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+</script>     	
+</body>
+
+</html>
